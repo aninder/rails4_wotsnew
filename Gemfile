@@ -3,6 +3,9 @@ gem 'rails', '4.2.4'
 gem 'sqlite3'
 gem 'turbolinks'
 gem 'jquery-rails'
+gem 'ffaker', "~> 2.1"
+gem 'responders', '2.1.0'
+gem 'uglifier'
 group :development, :test do
   # gem 'byebug'
 end

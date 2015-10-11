@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151010134509) do
+ActiveRecord::Schema.define(version: 20151010212245) do
 
-  create_table "addresses", force: :cascade do |t|
+  create_table "addresses", force: :cascapede do |t|
     t.string   "city"
     t.string   "state"
     t.string   "country"
@@ -37,9 +37,12 @@ ActiveRecord::Schema.define(version: 20151010134509) do
 
   create_table "people", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "addresses_count", default: 0
   end
+
+  add_index "people", ["name"], name: "index_people_on_name"
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"

@@ -82,6 +82,7 @@ GEM
     eventmachine (1.0.8)
     execjs (2.6.0)
     fastercsv (1.5.5)
+    ffaker (2.1.0)
     ffi (1.9.10)
     formatador (0.2.5)
     git-version-bump (0.15.1)
@@ -200,6 +201,8 @@ GEM
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    responders (2.1.0)
+      railties (>= 4.2.0, < 5)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
       rspec-expectations (~> 3.3.0)
@@ -246,6 +249,9 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uglifier (2.7.2)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
     uniform_notifier (1.9.0)
     web-console (2.2.1)
       activemodel (>= 4.0)
@@ -263,6 +269,7 @@ DEPENDENCIES
   brakeman
   bullet
   bundler-audit
+  ffaker (~> 2.1)
   guard-brakeman
   guard-livereload
   guard-rspec
@@ -279,11 +286,13 @@ DEPENDENCIES
   rails (= 4.2.4)
   rails-footnotes
   rb-fsevent
+  responders (= 2.1.0)
   spring
   sqlite3
   traceroute
   travis-lint
   turbolinks
+  uglifier
   web-console (~> 2.0)
 
 BUNDLED WITH
