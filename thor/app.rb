@@ -12,7 +12,6 @@ require 'thor'
 # App.new ARGV
 class App < Thor
   include Thor::Actions
-  include Rails::Generators::Actions
   desc "hell0", "prints hello to screen"
   # argument :word, :default => "word1"
   argument :word2, :default => "word2",:type=>:array

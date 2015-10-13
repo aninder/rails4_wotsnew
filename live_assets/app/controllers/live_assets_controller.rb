@@ -1,21 +1,15 @@
 class LiveAssetsController < ApplicationController
   include ActionController::Live
-  def index1
-    while true
-     response.stream.write(Time.new.to_s)
-      # response.stream.write(IO.popen("ps -e").read.gsub("\n","<br/>"))
-      sleep 1
-    end
-    # render :text => "fdfdfF"
-    rescue ClientDisconnected
-      response.stream.close
-  end
   def index
+  end
+  def sse
     response.headers["Cache-Control"] = "no-cache"
     response.headers["Content-Type"] = "text/event-stream"
     while true
-      response.stream.write "event: reloadCSS\ndata: {}\n\n"
-      sleep 1
+      IO.popen('ps -e') do |f|
+        ps = f.read.gsub("\n","<br/>");
+        response.stream.write "event: xxx\ndata: {\"z\":\"#{ps}\"}\n\n"
+      end
     end
   rescue IOError
     response.stream.close
